@@ -1,0 +1,419 @@
+body{
+    overflow-x: hidden;
+}
+
+
+header{
+    flex-wrap: nowrap;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header a:hover{
+    text-decoration: none;
+}
+
+.headerRight .primerMenu a{
+    color: #f8f9fa;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.headerRight .primerMenu a:hover{
+    color: #f8f9fa;
+}
+
+.headerRight .segundoMenu a{
+    color: #404040;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.headerRight .segundoMenu a:hover{
+    color: #404040;
+}
+
+.headerRight > div:nth-child(1){
+    background-color: #bb1032;
+    padding: 10px 24px;
+}
+.centered-text {
+    color: #000;
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+.centered-text h1{
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.centered-text p, .centered-text a{
+    color: #999999 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+}
+
+.generalDiv{
+    background: #c34745;
+    width: fit-content;
+
+}
+
+.generalDiv img,
+.social img,
+.espiritual img,
+.transversal img,
+.direccion img,
+.espacios img{
+    width: 64px;
+    height: 64px;
+
+}
+
+.social{
+    background: #d1764c;
+    width: fit-content;
+
+}
+
+.espiritual{
+    background: #dfbc89;
+    width: fit-content;
+
+}
+
+.transversal{
+    background: #b4d7de;
+    width: fit-content;
+}
+
+.transversal h2{
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0px;
+}
+
+.direccion{
+    background: #8cc8bb;
+    width: fit-content;
+
+}
+
+.direccion img{
+    width: 64px;
+    height: 64px;
+
+}
+
+.espacios{
+    background: #63b0b0;
+    width: fit-content;
+
+}
+
+.espacios img{
+    width: 64px;
+    height: 64px;
+
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+.carousel-item {
+    width: 180px;
+    height: 217px;
+  }
+  
+  .carousel-inner {
+    height: 217px;
+  }
+
+  .card-container {
+    flex: 0 0 30%;
+    position: relative;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-cursos {
+    position: relative;
+    width: 75%;
+    border: 1px solid #cccccc;
+  }
+  
+  .card-cursos .card-img-top {
+    width: 100%;
+    display: block;
+  }
+  
+  .card-container span {
+    min-width: 90px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    left: 72px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 500;
+  }
+
+  .card-container span strong{
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  .card-container:nth-child(1) span {
+    background-color: #8cc8bb;
+  }
+  
+  .card-container:nth-child(2) span {
+    background-color: #db5f5d;
+  }
+  
+  .card-container:nth-child(3) span,
+  .card-container:nth-child(4) span,
+  .card-container:nth-child(5) span,
+  .card-container:nth-child(8) span,
+  .card-container:nth-child(9) span {
+    background-color: #e58d64;
+  }
+  
+  .card-container:nth-child(6) span {
+    background-color: #b4d7de;
+  }
+  
+  .card-container:nth-child(7) span {
+    background-color: #db5f5d;
+  }
+
+.categorias h2{
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-family: sans-serif;
+  }
+
+  .aplicar{
+    vertical-align: top;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    font-weight: bold;
+    background: #bb1032 !important;
+    display: inline-block;
+    padding: 16px 24px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .filtrado .form-select{
+    width: fit-content;
+  }
+
+  
+  .card-cursos .bi-circle-fill {
+    position: absolute;
+    bottom: 58%;
+    left: 10%;
+    transform: translate(-50%, 50%); 
+    z-index: 10;
+}
+
+  
+
+.card-cursos .card-body {
+    margin-top: 30px;
+  }
+  
+.card-body h3{
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 2px;
+    color: #bb1032;
+}
+.card-body h3:hover{
+    color: #960d28;
+}
+
+.card-body h2{
+    min-height: 84px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 900;
+    margin-bottom: 14px;
+    color: #404040;
+}
+
+.cuerpo{
+    border-top: 1px solid #cccccc;
+    font-weight: 500;
+    border-bottom: 1px solid #cccccc;
+    padding: 14px 0;
+    color: #404040;
+    margin-bottom: 15px;
+}
+
+.schedule{
+    width: 50%;
+}
+
+.card-footer{
+    font-weight: 900;
+    text-align: right;
+    color: #bb1032;
+    background-color: transparent !important;
+    width: 50%;
+    border: none !important; 
+    cursor: pointer;   
+}
+
+.card-footer:hover{
+    color: #960d28;
+    cursor: pointer;
+}
+
+.texto p{
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #404040;
+    display: block;
+}
+
+.texto h2{
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0px;
+    color: #ffffff;
+}
+
+.preFooter{
+    background-color: #212529;
+    opacity: 0.89;
+}
+
+.preFooterContainer{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0px 291px;
+    margin-top: 100px;
+    padding-top: 40px;
+}
+
+.preFooterContainer h2{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.preFooterContainer p{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.preFooterContainer button, .voluntariadoDona button{
+    text-align: center;
+    color: #ffffff;
+    font-weight: 900;
+    background: #bb1032;
+    padding: 20px 34px;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+}
+
+.preFooterContainer button:hover{
+    background: #960d28;
+    color: #ffffff;
+}
+
+.subscribirse{
+    border-right: 1px solid #646464;
+}
+
+.footer{
+    background-color: #bb1032 !important;
+}
+
+.menuFooter{
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+}
+
+.linksFooter a{
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.linksFooter a:hover{
+    color: #f8f9fa;
+}
+
+.linksFooter ul li{
+    list-style-type: none;
+}
+
+.quienesSomos,
+.queHacemos,
+.colabora,
+.actualidad {
+    border-right: 1px solid #f56783;
+    height: 100%;
+    padding-right: 20px;
+    
+}
+
+.addressPhone, .copyright{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.863rem;
+    color: #f8f9fa;
+}
+
+.avisos a{
+    text-decoration: none;
+    color: #f8f9fa;
+
+}
+
+.avisos a:hover{
+    text-decoration: none;
+    color: #f8f9fa;
+
+}
+
+.voluntariadoDona{
+    background-color: #f3f3f3;
+    padding: 30px 24px;
+    min-width: 255px;
+}
+
+.headerRight .primerMenu {
+  flex-grow: 1;
+}
