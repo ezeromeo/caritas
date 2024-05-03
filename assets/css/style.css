@@ -1,53 +1,54 @@
-body{
+body {
     overflow-x: hidden;
 }
 
 
-header{
+header {
     flex-wrap: nowrap;
 }
 
-header a{
+header a {
     text-decoration: none;
 }
 
-header a:hover{
+header a:hover {
     text-decoration: none;
 }
 
-.headerRight .primerMenu a{
+.headerRight .primerMenu a {
     color: #f8f9fa;
     text-decoration: none;
     font-size: 14px;
     line-height: 14px;
 }
 
-.headerRight .primerMenu a:hover{
+.headerRight .primerMenu a:hover {
     color: #f8f9fa;
 }
 
-.headerRight .segundoMenu a{
+.headerRight .segundoMenu a {
     color: #404040;
     text-decoration: none;
     font-size: 14px;
     line-height: 14px;
 }
 
-.headerRight .segundoMenu a:hover{
+.headerRight .segundoMenu a:hover {
     color: #404040;
 }
 
-.headerRight > div:nth-child(1){
+.headerRight>div:nth-child(1) {
     background-color: #bb1032;
     padding: 10px 24px;
 }
+
 .centered-text {
     color: #000;
     text-align: center;
     padding-bottom: 120px;
 }
 
-.centered-text h1{
+.centered-text h1 {
     font-size: 36px;
     line-height: 40px;
     margin-bottom: 10px;
@@ -55,13 +56,14 @@ header a:hover{
     font-family: sans-serif;
 }
 
-.centered-text p, .centered-text a{
+.centered-text p,
+.centered-text a {
     color: #999999 !important;
     font-size: 12px;
     text-decoration: none !important;
 }
 
-.generalDiv{
+.generalDiv {
     background: #c34745;
     width: fit-content;
 
@@ -72,96 +74,119 @@ header a:hover{
 .espiritual img,
 .transversal img,
 .direccion img,
-.espacios img{
+.espacios img {
     width: 64px;
     height: 64px;
 
 }
 
-.social{
+.social {
     background: #d1764c;
     width: fit-content;
 
 }
 
-.espiritual{
+.espiritual {
     background: #dfbc89;
     width: fit-content;
 
 }
 
-.transversal{
+.transversal {
     background: #b4d7de;
     width: fit-content;
 }
 
-.transversal h2{
+.transversal h2 {
     font-weight: 900;
     font-size: 24px;
     margin: 0px;
 }
 
-.direccion{
+.direccion {
     background: #8cc8bb;
     width: fit-content;
 
 }
 
-.direccion img{
+.direccion img {
     width: 64px;
     height: 64px;
 
 }
 
-.espacios{
+.espacios {
     background: #63b0b0;
     width: fit-content;
 
 }
 
-.espacios img{
+.espacios img {
     width: 64px;
     height: 64px;
 
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
 
 .carousel-item {
     width: 180px;
     height: 217px;
-  }
-  
-  .carousel-inner {
-    height: 217px;
-  }
+}
 
-  .card-container {
+.carousel-inner {
+    height: 217px;
+}
+
+.cards {
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 10px;
+}
+
+.card-container {
     flex: 0 0 30%;
     position: relative;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .card-cursos {
+}
+
+.card-cursos {
     position: relative;
-    width: 75%;
+    width: 500px;
     border: 1px solid #cccccc;
+    height: 100%;
+}
+
+
+@media (max-width: 992px) {
+    .cards {
+      width: 100%; 
+    }
+    .card-cursos{
+        width: 500px;
+    }
   }
   
-  .card-cursos .card-img-top {
+  
+  @media (max-width: 768px) {
+    .cards {
+      width: 100%; 
+    }
+    .card-cursos{
+        width: 500px;
+    }
+  }
+  
+
+
+.card-cursos .card-img-top {
     width: 100%;
     display: block;
-  }
-  
-  .card-container span {
+}
+
+.card-container span {
     min-width: 90px;
     position: absolute;
     text-align: center;
@@ -172,47 +197,47 @@ header a:hover{
     font-size: 15px;
     line-height: 19px;
     font-weight: 500;
-  }
+}
 
-  .card-container span strong{
+.card-container span strong {
     font-size: 30px;
     line-height: 30px;
     font-weight: 600;
-  }
+}
 
-  .card-container:nth-child(1) span {
+.card-container:nth-child(1) span {
     background-color: #8cc8bb;
-  }
-  
-  .card-container:nth-child(2) span {
-    background-color: #db5f5d;
-  }
-  
-  .card-container:nth-child(3) span,
-  .card-container:nth-child(4) span,
-  .card-container:nth-child(5) span,
-  .card-container:nth-child(8) span,
-  .card-container:nth-child(9) span {
-    background-color: #e58d64;
-  }
-  
-  .card-container:nth-child(6) span {
-    background-color: #b4d7de;
-  }
-  
-  .card-container:nth-child(7) span {
-    background-color: #db5f5d;
-  }
+}
 
-.categorias h2{
+.card-container:nth-child(2) span {
+    background-color: #db5f5d;
+}
+
+.card-container:nth-child(3) span,
+.card-container:nth-child(4) span,
+.card-container:nth-child(5) span,
+.card-container:nth-child(8) span,
+.card-container:nth-child(9) span {
+    background-color: #e58d64;
+}
+
+.card-container:nth-child(6) span {
+    background-color: #b4d7de;
+}
+
+.card-container:nth-child(7) span {
+    background-color: #db5f5d;
+}
+
+.categorias h2 {
     font-size: 36px;
     line-height: 40px;
     margin-bottom: 10px;
     font-weight: 900;
     font-family: sans-serif;
-  }
+}
 
-  .aplicar{
+.aplicar {
     vertical-align: top;
     border: none;
     text-align: center;
@@ -224,38 +249,43 @@ header a:hover{
     padding: 16px 24px;
     text-decoration: none;
     font-size: 12px;
-  }
-
-  .filtrado .form-select{
-    width: fit-content;
-  }
-
-  
-  .card-cursos .bi-circle-fill {
-    position: absolute;
-    bottom: 58%;
-    left: 10%;
-    transform: translate(-50%, 50%); 
-    z-index: 10;
 }
 
-  
+.filtrado .form-select {
+    width: fit-content;
+}
+
+
+.card-cursos .bi-circle-fill {
+    margin-top: -36px;
+    margin-bottom: 10px;
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .card-cursos .card-body {
     margin-top: 30px;
-  }
-  
-.card-body h3{
+}
+
+.card-body h3 {
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 2px;
     color: #bb1032;
 }
-.card-body h3:hover{
+
+.card-body h3:hover {
     color: #960d28;
 }
 
-.card-body h2{
+.card-body h2 {
     min-height: 84px;
     font-size: 20px;
     line-height: 26px;
@@ -264,7 +294,7 @@ header a:hover{
     color: #404040;
 }
 
-.cuerpo{
+.cuerpo {
     border-top: 1px solid #cccccc;
     font-weight: 500;
     border-bottom: 1px solid #cccccc;
@@ -273,26 +303,26 @@ header a:hover{
     margin-bottom: 15px;
 }
 
-.schedule{
+.schedule {
     width: 50%;
 }
 
-.card-footer{
+.card-footer {
     font-weight: 900;
     text-align: right;
     color: #bb1032;
     background-color: transparent !important;
     width: 50%;
-    border: none !important; 
-    cursor: pointer;   
+    border: none !important;
+    cursor: pointer;
 }
 
-.card-footer:hover{
+.card-footer:hover {
     color: #960d28;
     cursor: pointer;
 }
 
-.texto p{
+.texto p {
     font-size: 12px;
     line-height: 12px;
     text-transform: uppercase;
@@ -301,19 +331,19 @@ header a:hover{
     display: block;
 }
 
-.texto h2{
+.texto h2 {
     font-weight: 900;
     font-size: 24px;
     margin: 0px;
     color: #ffffff;
 }
 
-.preFooter{
+.preFooter {
     background-color: #212529;
     opacity: 0.89;
 }
 
-.preFooterContainer{
+.preFooterContainer {
     padding-left: 30px;
     padding-right: 30px;
     margin: 0px 291px;
@@ -321,20 +351,21 @@ header a:hover{
     padding-top: 40px;
 }
 
-.preFooterContainer h2{
+.preFooterContainer h2 {
     font-size: 36px;
     line-height: 40px;
     font-weight: 900;
     margin-bottom: 18px;
 }
 
-.preFooterContainer p{
+.preFooterContainer p {
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
 }
 
-.preFooterContainer button, .voluntariadoDona button{
+.preFooterContainer button,
+.voluntariadoDona button {
     text-align: center;
     color: #ffffff;
     font-weight: 900;
@@ -345,20 +376,20 @@ header a:hover{
     margin-bottom: 10px;
 }
 
-.preFooterContainer button:hover{
+.preFooterContainer button:hover {
     background: #960d28;
     color: #ffffff;
 }
 
-.subscribirse{
+.subscribirse {
     border-right: 1px solid #646464;
 }
 
-.footer{
+.footer {
     background-color: #bb1032 !important;
 }
 
-.menuFooter{
+.menuFooter {
     font-weight: 300;
     font-size: 30px;
     line-height: 34px;
@@ -366,16 +397,16 @@ header a:hover{
     color: #f8f9fa;
 }
 
-.linksFooter a{
+.linksFooter a {
     text-decoration: none;
     color: #f8f9fa;
 }
 
-.linksFooter a:hover{
+.linksFooter a:hover {
     color: #f8f9fa;
 }
 
-.linksFooter ul li{
+.linksFooter ul li {
     list-style-type: none;
 }
 
@@ -386,34 +417,67 @@ header a:hover{
     border-right: 1px solid #f56783;
     height: 100%;
     padding-right: 20px;
-    
+
 }
 
-.addressPhone, .copyright{
+.addressPhone,
+.copyright {
     text-align: center;
     padding-top: 1rem;
     font-size: 0.863rem;
     color: #f8f9fa;
 }
 
-.avisos a{
+.avisos a {
     text-decoration: none;
     color: #f8f9fa;
 
 }
 
-.avisos a:hover{
+.avisos a:hover {
     text-decoration: none;
     color: #f8f9fa;
 
 }
 
-.voluntariadoDona{
+.voluntariadoDona {
     background-color: #f3f3f3;
     padding: 30px 24px;
     min-width: 255px;
 }
 
 .headerRight .primerMenu {
-  flex-grow: 1;
+    flex-grow: 1;
+}
+
+.navbar-nav{
+    background-color: #bb1032;
+    width: fit-content;
+}
+
+.navbar-nav a img{
+    width: 19px;
+    height: 19px;
+}
+
+.follow{
+    color: white !important;
+    font-size: 8px;
+    padding: 0.8rem 0.25rem 0.25rem;
+}
+
+.container-fluid{
+    position: fixed;
+    padding: 0 !important;
+    z-index: 1;
+    margin-bottom: -35%;
+}
+
+.fechaSpan span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    margin: 0;
+    padding: 0;
 }
