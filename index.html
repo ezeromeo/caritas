@@ -20,7 +20,7 @@
     </div>
     <div class="headerRight d-flex align-items-start justify-content-start flex-column">
       <div class="d-flex justify-content-between align-items-center w-100 contactHablemos">
-        <div class="d-flex align-items-center primerMenu">
+        <div class="d-flex align-items-center primerMenu w-100">
           <div class="buscador me-3 d-flex align-items-center">
             <img src="assets/img/search.svg" alt="Buscar" style="height: 24px;">
             <a href="#" class="ms-2">BUSCADOR</a>
@@ -30,7 +30,7 @@
             <a href="#" class="ms-2">SALA DE PRENSA</a>
           </div>
         </div>
-        <div class="contactInfo d-flex align-items-center primerMenu">
+        <div class="contactInfo d-flex align-items-center justify-content-end primerMenu w-100">
           <strong class="me-2">Hablemos</strong>
           <a href="tel:+34915489580" class="me-2">+34 91 548 95 80</a>
           <a href="/contacta-con-caritas" class="ms-2">Contacto</a>
@@ -81,75 +81,51 @@
     </div>
     <div class="categorias d-flex flex-column align-items-center justify-content-center mt-5">
       <h2 class="mb-5">Categorías</h2>
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" style="width: 220px; height: 217px;">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-            aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
-            aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
-            aria-label="Slide 6"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active d-flex align-items-center justify-content-center flex-column"
-            style="background-color: #c34745;">
-            <img src="assets/img/general.png" alt="">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>General</h2>
-            </div>
-          </div>
-          <div class="carousel-item text-center" style="background-color: #d1764c;">
-            <img src="assets/img/icono_social.png" alt="" class="mt-3">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>Social - Específica</h2>
-            </div>
-          </div>
-          <div class="carousel-item text-center" style="background-color: #dfbc89;">
-            <img src="assets/img/espiritual.png" alt="" class="mt-3">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>Espiritual</h2>
-            </div>
-          </div>
-          <div class="carousel-item text-center" style="background-color: #b4d7de;">
-            <img src="assets/img/transversal.png" alt="" class="mt-3">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>Transversal</h2>
-            </div>
-          </div>
-          <div class="carousel-item text-center" style="background-color: #8cc8bb;">
-            <img src="assets/img/direccion.png" alt="" class="mt-3">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>Dirección</h2>
-            </div>
-          </div>
-          <div class="carousel-item text-center" style="background-color: #63b0b0;">
-            <img src="assets/img/espacios.png" alt="" class="mt-3">
-            <div class="texto">
-              <span>FORMACIÓN</span>
-              <h2>Espacios de reflexión</h2>
-            </div>
+      <div class="categorias-container" style="display: flex; overflow-x: auto; gap: 10px;">
+        <div class="card" style="width: 220px; height: 217px; background-color: #c34745; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/general.png" alt="">
+          <div class="texto mb-3">
+            <span>FORMACIÓN</span>
+            <h2>General</h2>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="card" style="width: 220px; height: 217px; background-color: #d1764c; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/icono_social.png" alt="" class="mt-3 mb-3">
+          <div class="texto">
+            <span>FORMACIÓN</span>
+            <h2>Social - Específica</h2>
+          </div>
+        </div>
+        <div class="card" style="width: 220px; height: 217px; background-color: #dfbc89; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/espiritual.png" alt="" class="mt-3 mb-3">
+          <div class="texto">
+            <span>FORMACIÓN</span>
+            <h2>Espiritual</h2>
+          </div>
+        </div>
+        <div class="card" style="width: 220px; height: 217px; background-color: #b4d7de; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/transversal.png" alt="" class="mt-3 mb-3">
+          <div class="texto">
+            <span>FORMACIÓN</span>
+            <h2>Transversal</h2>
+          </div>
+        </div>
+        <div class="card" style="width: 220px; height: 217px; background-color: #8cc8bb; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/direccion.png" alt="" class="mt-3 mb-3">
+          <div class="texto">
+            <span>FORMACIÓN</span>
+            <h2>Dirección</h2>
+          </div>
+        </div>
+        <div class="card" style="width: 220px; height: 217px; background-color: #63b0b0; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <img src="assets/img/espacios.png" alt="" class="mt-3 mb-3">
+          <div class="texto">
+            <span>FORMACIÓN</span>
+            <h2>Espacios de reflexión</h2>
+          </div>
+        </div>
       </div>
+      
       <div class="cursos mt-5 d-flex flex-column align-items-center">
         <h2 class="text-center">Todos los cursos</h2>
         <div class="filtrado d-flex align-items-center justify-content-start">
@@ -168,7 +144,10 @@
           <button class="btn aplicar ms-3">Aplicar</button>
         </div>
         <div class="cards d-flex align-items-start justify-content-center">
-          <div class="card-container">
+          <div id="loader" class="spinner-border mt-5" style="width: 5rem; height: 5rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>          
+          <!-- <div class="card-container">
             <div class="card-cursos">
               <img src="assets/img/card1.jpg" class="card-img-top img-fluid" alt="...">
               <div class="fechaSpan d-flex align-items-center justify-content-end">
@@ -546,8 +525,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
+        <div class="pagination-container"></div>
       </div>
     </div>
     <div class="preFooter pb-5">
@@ -675,6 +655,7 @@
       <a href="#">Politica de privacidad</a>
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
 </body>
