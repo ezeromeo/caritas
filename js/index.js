@@ -170,6 +170,7 @@ function crearTarjeta(data) {
         `;
 }
 
+
 function getModalidadNombre(codigo) {
   const modalidades = {
     'M': 'Mixta',
@@ -318,6 +319,7 @@ function poblarInfoCurso(datosCurso) {
   const cursoEspecifico = datosCurso.find(curso => curso.accionId === accionId);
 
   console.log(cursoEspecifico)
+  console.log(datosCurso)
 
   if (!cursoEspecifico) {
     console.error('No se encontró el curso específico');
@@ -495,10 +497,15 @@ function poblarInfoCurso(datosCurso) {
   const h3TextoCurso = document.createElement('h3');
   h3TextoCurso.className = 'h3TextoCurso';
   h3TextoCurso.textContent = 'Descripción';
-  const pTextoCurso = document.createElement('p');
-  pTextoCurso.textContent = cursoEspecifico.datosExtendidos.Descripcion;
   divTextoCurso.appendChild(h3TextoCurso);
-  divTextoCurso.appendChild(pTextoCurso);
+  const pTextoCurso = document.createElement('p');
+  if (cursoEspecifico.datosExtendidos.Descripcion && cursoEspecifico.datosExtendidos.Descripcion.trim() !== '') {
+    pTextoCurso.textContent = cursoEspecifico.datosExtendidos.Descripcion;
+    divTextoCurso.appendChild(pTextoCurso);
+  } else {
+    pTextoCurso.textContent = 'Sin especificar';
+    divTextoCurso.appendChild(pTextoCurso);
+  }
   colLg8.appendChild(divTextoCurso);
 
   
@@ -628,7 +635,7 @@ divBox.appendChild(divInscripcion);
 }
 function convertirFecha(fechaStr) {
   if (!fechaStr || fechaStr.trim() === '') {
-      return "A definir";
+      return "A Definir";
   }
 
   const partes = fechaStr.split('/');
