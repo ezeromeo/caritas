@@ -22,6 +22,14 @@ header a:hover {
     line-height: 14px;
 }
 
+.imageTitle{
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .headerRight .primerMenu a:hover {
     color: #f8f9fa;
 }
@@ -141,6 +149,7 @@ header a:hover {
     flex-wrap: wrap;
     height: 100%;
     gap: 10px;
+    flex: 0 1 200px; 
 }
 
 .card-container {
@@ -150,6 +159,7 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .card-cursos {
@@ -179,15 +189,25 @@ header a:hover {
     }
     .cards {
       width: 100%; 
+      flex: 0 1 100%
     }
     .card-cursos{
         width: 500px;
     }
+
+    .cards-container {
+        justify-content: center;
+      }
   }
 
   
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
   
-
 
 .card-cursos .card-img-top {
     width: fit-content;
@@ -490,8 +510,9 @@ header a:hover {
     padding: 0.8rem 0.25rem 0.25rem;
 }
 
-
 /* Estilos curso (Luego se creara un nuevo archivo de estilos) */
+
+
 
 .container-fluid{
     position: fixed;
@@ -603,19 +624,11 @@ header a:hover {
     color: #bb1032;
 }
 
-.objetivos h3, .contenidos h3{
+.objetivos h3, .contenidos h3, .h3TextoCurso{
     font-size: 24px;
     line-height: 30px;
     margin-bottom: 30px;
     font-weight: 900;
-}
-
-.contenidos ul li{
-    list-style-type: none;
-}
-
-.contenidos ul{
-    padding-left: 0;
 }
 
 .segundaColumna img {
