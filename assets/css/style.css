@@ -211,6 +211,7 @@ header a:hover {
 
 .card-cursos .card-img-top {
     width: fit-content;
+    height: 300px;
 }
 
 .card-container span {
@@ -353,17 +354,53 @@ header a:hover {
     color: #bb1032;
 }
 
-.page-button{
-    border: none;
-    background: none;
+.spinner{
+    height: 500px !important;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .page-button {
+    border: 1px solid #bb1032;
+    background-color: #ffffff;
     color: #bb1032;
-    text-decoration: underline;
-}
-
-.page-button:hover{
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-button.active {
+    background-color: #bb1032;
+    color: #ffffff;
+  }
+  
+  .page-button:hover:not(.active) {
+    background-color: #bb1032;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .page-button:disabled {
     opacity: 0.5;
-}
-
+    cursor: not-allowed;
+  }
+  
+  .page-button:first-of-type, .page-button:last-of-type {
+    border-radius: 5px 0 0 5px; /* Rounded corners for first button */
+  }
+  
+  .page-button:last-of-type {
+    border-radius: 0 5px 5px 0; /* Rounded corners for last button */
+  }
+  
 .texto span {
     font-size: 12px;
     line-height: 12px;

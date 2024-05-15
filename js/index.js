@@ -15,7 +15,6 @@ async function fetchAndParseXML(url, body, contentType) {
     const xmlDoc = parser.parseFromString(text, 'text/xml');
     return xmlDoc;
   } catch (error) {
-    console.error('Error al obtener o analizar XML:', error);
     return null;
   }
 }
@@ -66,7 +65,6 @@ async function combineData() {
     ]);
 
     if (!accionesXmlDoc || !gruposXmlDoc) {
-      console.error('Error al obtener o analizar uno o ambos XML.');
       return;
     }
 
@@ -104,7 +102,6 @@ async function combineData() {
 
     return combinedData;
   } catch (error) {
-    console.error('Error al obtener o procesar los datos:', error);
   }
 }
 
@@ -188,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function generateCards(page = 0) {
-  $("#loader").show();
+  showLoader();
   const combinedData = await combineData();
   const pageSize = 9;
   const paginatedData = paginateData(combinedData, pageSize);
@@ -198,23 +195,21 @@ async function generateCards(page = 0) {
 
 
 
-  $("#loader").hide();
+  hideLoader();
 }
 
 
 function renderPage(paginatedData, page) {
   const contenedor = document.querySelector('.cards');
   if (!contenedor) {
-    console.error('El contenedor no fue encontrado. Verifica tu HTML y el selector.');
-    $("#loader").hide();
+    hideLoader();
     return;
   }
 
   contenedor.innerHTML = '';
 
   if (!paginatedData[page] || paginatedData[page].length === 0) {
-    console.error('No hay datos para esta página:', page);
-    $("#loader").hide();
+    hideLoader();
     return;
   }
 
@@ -225,7 +220,7 @@ function renderPage(paginatedData, page) {
     contenedor.appendChild(div);
   });
 
-  $("#loader").hide();
+  hideLoader();
 }
 
 
@@ -241,12 +236,38 @@ function paginateData(data, pageSize) {
 function renderPaginationButtons(totalPages, currentPage) {
   const paginationContainer = document.querySelector('.pagination-container');
   if (!paginationContainer) {
-    console.error('El contenedor de paginación no fue encontrado. Verifica tu HTML y el selector.');
     return;
   }
 
   paginationContainer.innerHTML = '';
-  const maxVisibleButtons = 4;
+
+  const createButton = (page, text, disabled = false) => {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.classList.add('page-button');
+    if (disabled) {
+      button.disabled = true;
+      button.style.opacity = '0.5';
+    } else {
+      button.addEventListener('click', () => {
+        showLoader();
+        generateCards(page);
+        window.scrollTo({ top: 20, behavior: 'smooth' });
+      });
+    }
+    return button;
+  };
+
+  
+  const firstButton = createButton(0, '<<', currentPage === 0);
+  paginationContainer.appendChild(firstButton);
+
+  
+  const prevButton = createButton(currentPage - 1, '<', currentPage === 0);
+  paginationContainer.appendChild(prevButton);
+
+  
+  const maxVisibleButtons = 5;
   let startPage = Math.max(currentPage - Math.floor(maxVisibleButtons / 2), 0);
   let endPage = startPage + maxVisibleButtons;
 
@@ -255,34 +276,30 @@ function renderPaginationButtons(totalPages, currentPage) {
     startPage = Math.max(endPage - maxVisibleButtons, 0);
   }
 
-
-  if (startPage > 0) {
-    const button = createPageButton(0, '<<');
-    paginationContainer.appendChild(button);
-  }
-
-
   for (let i = startPage; i < endPage; i++) {
-    const button = createPageButton(i, i + 1);
+    const button = createButton(i, i + 1, false);
     if (i === currentPage) {
       button.classList.add('active');
     }
     paginationContainer.appendChild(button);
   }
 
+  
+  const nextButton = createButton(currentPage + 1, '>', currentPage === totalPages - 1);
+  paginationContainer.appendChild(nextButton);
 
-  if (endPage < totalPages) {
-    const button = createPageButton(totalPages - 1, '>>');
-    paginationContainer.appendChild(button);
-  }
+  
+  const lastButton = createButton(totalPages - 1, '>>', currentPage === totalPages - 1);
+  paginationContainer.appendChild(lastButton);
 }
+
 
 function createPageButton(page, text) {
   const button = document.createElement('button');
   button.textContent = text;
   button.classList.add('page-button');
   button.addEventListener('click', () => {
-    $("#loader").show();
+    showLoader();
     generateCards(page);
   });
   return button;
@@ -294,22 +311,43 @@ async function main() {
       const combinedData = await combineData(); 
       if (combinedData && combinedData.length > 0) {
           poblarInfoCurso(combinedData);
-          $("#loader").hide();
+          hideLoader();
       } else {
-          console.error('combinedData está vacío o no se obtuvieron datos.');
-          $("#loader").hide();
+          hideLoader();
       }
   } catch (error) {
-      console.error('Error al obtener o procesar los datos:', error);
-      $("#loader").hide();
+      hideLoader();
   }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  $("#loader").show();
+  showLoader();
 
   main();
 });
+
+function showLoader() {
+  const spinner = document.querySelector('.spinner');
+  const contenedor = document.querySelector('.cards');
+  contenedor.style.display = 'none'; 
+  spinner.style.display = 'flex'; 
+  spinner.style.alignItems = 'center';
+  spinner.style.justifyContent = 'center';
+  spinner.style.flexDirection = 'column';
+}
+
+
+function hideLoader() {
+  const spinner = document.querySelector('.spinner');
+  const contenedor = document.querySelector('.cards');
+  spinner.style.display = 'none'; 
+  contenedor.style.display = 'flex'; 
+  contenedor.style.alignItems = 'center';
+  contenedor.style.justifyContent = 'center';
+}
+
+
+
 
 function poblarInfoCurso(datosCurso) {
   const container = document.getElementById('cursoContainer');
@@ -318,11 +356,7 @@ function poblarInfoCurso(datosCurso) {
   const accionId = urlParams.get('accionId');
   const cursoEspecifico = datosCurso.find(curso => curso.accionId === accionId);
 
-  console.log(cursoEspecifico)
-  console.log(datosCurso)
-
   if (!cursoEspecifico) {
-    console.error('No se encontró el curso específico');
     return;
   }
 
@@ -413,13 +447,13 @@ function poblarInfoCurso(datosCurso) {
 
   const rowInfo = document.createElement('div');
   rowInfo.className = 'row';
-  const fechaInscripcionInicio = convertirFecha(cursoEspecifico.datosExtendidos.FechaInscripcionInicio);
-  const fechaInscripcionFin = convertirFecha(cursoEspecifico.datosExtendidos.FechaInscripcionFin);
+  const fechaInicio = convertirFecha(cursoEspecifico.fechaInicio);
+  const fechaFin = convertirFecha(cursoEspecifico.fechaFin);
 
   const infoDetails = [
-      { img: 'calendar', subtitle: 'COMIENZA', title: fechaInscripcionInicio },
-      { img: 'calendar', subtitle: 'FINALIZA', title: fechaInscripcionFin },
-      { svg: 'bi bi-clock', subtitle: 'HORARIO', title: 'A Definir' },
+      { img: 'calendar', subtitle: 'COMIENZA', title: fechaInicio },
+      { img: 'calendar', subtitle: 'FINALIZA', title: fechaFin },
+      { svg: 'bi bi-clock', subtitle: 'HORARIO', title: '-' },
       { svg: 'bi bi-clock-history', subtitle: 'DURACIÓN', title: `${cursoEspecifico.horasTotales} horas` },
   ];
 
@@ -635,7 +669,7 @@ divBox.appendChild(divInscripcion);
 }
 function convertirFecha(fechaStr) {
   if (!fechaStr || fechaStr.trim() === '') {
-      return "A Definir";
+      return "-";
   }
 
   const partes = fechaStr.split('/');
